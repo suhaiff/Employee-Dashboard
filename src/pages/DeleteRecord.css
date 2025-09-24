@@ -1,0 +1,298 @@
+/* Container */
+.delete-container {
+  font-family: 'Poppins', sans-serif;
+  background: #f7f9fc;
+  min-height: 100vh;
+  padding: 20px;
+  color: #222;
+}
+
+/* Navbar */
+.hamburger-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a 0%, #3b82f6 50%, #8b5cf6 100%);
+  padding: 14px 20px;
+  border-radius: 16px;
+  color: white;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 6px 24px rgba(15,23,42,0.15);
+}
+.hamburger-navbar .logo {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* Hamburger */
+.hamburger {
+  width: 28px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.hamburger span {
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* Navbar Links */
+.nav-links {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #fff;
+  padding: 16px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  border-radius: 12px;
+  gap: 12px;
+  animation: fadeIn 0.4s ease-out;
+  z-index: 1000;
+}
+.nav-links.active {
+  display: flex;
+}
+.nav-links li {
+  padding: 8px 14px;
+  cursor: pointer;
+  color: #4f46e5;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+.nav-links li:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Header */
+.delete-header {
+  text-align: center;
+  margin-top: 3rem;
+  animation: fadeInUp 0.6s ease-out;
+}
+.delete-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.delete-header p {
+  font-weight: 400;
+  color: #4b5563;
+  margin-top: 8px;
+}
+
+/* Search Controls */
+.search-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 40px 10%;
+}
+.delete-search,
+.search-dropdown {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+.delete-search:focus,
+.search-dropdown:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 6px rgba(79,70,229,0.25);
+}
+
+/* Buttons */
+.delete-btn,
+.bulk-delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  padding: 10px 18px;
+  transition: all 0.25s ease;
+}
+.delete-btn:hover,
+.bulk-delete-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Select All */
+.select-all {
+  margin: 0 10%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Employee Results */
+.employee-results {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 10%;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.employee-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 8px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.employee-row input[type="checkbox"] {
+  margin-right: 10px;
+}
+.employee-row.active {
+  background-color: #d6eaf8;
+}
+.employee-row:hover {
+  background-color: #f1f5f9;
+}
+
+/* Employee Preview Table */
+.employee-preview-table {
+  margin-top: 30px;
+  width: 80%;
+  margin-left: 10%;
+}
+.employee-preview-table h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.employee-preview {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Roboto', sans-serif;
+}
+.employee-preview th,
+.employee-preview td {
+  padding: 12px 15px;
+  text-align: left;
+}
+.employee-preview th {
+  background-color: #4f46e5;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.employee-preview tr:hover {
+  background-color: #f0f4f8;
+}
+
+/* Recently Deleted */
+.deleted-preview {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.deleted-preview h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #343a40;
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 5px;
+}
+.deleted-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.deleted-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+  flex: 1 1 250px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.deleted-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.deleted-info {
+  display: flex;
+  flex-direction: column;
+}
+.deleted-name {
+  font-weight: 600;
+  color: #495057;
+}
+.deleted-id {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+.restore-btn {
+  background-color: #0d6efd;
+  color: #ffffff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+.restore-btn:hover {
+  background-color: #0b5ed7;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+/* Responsive */
+@media (max-width: 760px) {
+  .employee-results, .employee-preview-table { width: 90%; margin-left: 5%; }
+  .search-controls { flex-direction: column; align-items: stretch; margin: 0 5%; }
+}
+@media (max-width: 480px) {
+  .delete-search, .search-dropdown, .delete-btn, .bulk-delete-btn { font-size: 13px; padding: 8px 10px; }
+  .restore-btn { font-size: 0.8rem; padding: 5px 10px; }
+}

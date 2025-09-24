@@ -1,38 +1,46 @@
+/* Full control */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Employee details table */
+.data-table{
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Search box */
+.searchbox {
+  display: none;
+}
+.searchbox input{
+  width: 40%;
+  height: 1.5rem;
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Sort Options */
+.sort {
+  display: none;
+}
+.sort-options {
+  margin-left: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Addition of employee */
+.add-employee {
+  display: none;
+}
+.addition-details input{
+  margin-left: 15px;
+  margin-bottom: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Salary section */
+.salary-table {
+  display: none;
+}
+.salary-table table {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
