@@ -14,7 +14,7 @@ function Search() {
 
   // Fetch employees from backend
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/employees")
+    fetch("https://employee-backend-k5pq.onrender.com/employees")
       .then((res) => res.json())
       .then((data) => {
         setEmployees(data);

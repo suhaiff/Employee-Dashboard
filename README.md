@@ -49,5 +49,5 @@ This project uses a **React.js frontend** and a **FastAPI backend** with CSV for
 
 ### Clone Repository
 ```bash
-git clone https://github.com/YOUR-USERNAME/employee-dashboard.git
+git clone https://github.com/suhaiff/employee-dashboard.git
 cd employee-dashboard

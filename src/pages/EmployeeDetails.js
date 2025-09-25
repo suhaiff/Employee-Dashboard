@@ -2,14 +2,18 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./EmployeeDetails.css";
 
+// ✅ Set your backend URL here
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "https://employee-backend-k5pq.onrender.com";
+
 function EmployeeDetails() {
   const [employees, setEmployees] = useState([]);
   const [sortField, setSortField] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Fetch employees from backend
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/employees")
+    fetch(`${BACKEND_URL}/employees`)
       .then((res) => res.json())
       .then((data) => setEmployees(data))
       .catch((err) => console.error("Error Fetching Employees", err));
@@ -45,10 +49,9 @@ function EmployeeDetails() {
     setEmployees(sorted);
   };
 
-  // Export Button
+  // Export CSV
   const handleExport = () => {
-    // Adjust the URL if your backend runs on another port
-    window.open("http://localhost:8000/employees/export", "_blank");
+    window.open(`${BACKEND_URL}/employees/export`, "_blank");
   };
 
   return (
@@ -99,16 +102,10 @@ function EmployeeDetails() {
         <button onClick={handleSort}>
           Sort {sortOrder === "asc" ? "⬆️" : "⬇️"}
         </button>
-        {/* Export Button */}
-        
         <button onClick={handleExport} className="export-btn">
           ⬇️ Export to CSV
         </button>
-        
       </div>
-
-      
-      
 
       {/* Table */}
       <div className="table-card">

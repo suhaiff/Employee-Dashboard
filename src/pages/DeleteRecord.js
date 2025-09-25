@@ -14,7 +14,7 @@ const DeleteRecord = () => {
 
   // Fetch employees
   useEffect(() => {
-    axios.get("http://127.0.0.1:8000/employees").then((res) => {
+    axios.get("https://employee-backend-k5pq.onrender.com/employees").then((res) => {
       setEmployees(res.data);
       setFilteredEmployees(res.data);
     });
@@ -47,7 +47,7 @@ const DeleteRecord = () => {
     if (!window.confirm(`Are you sure you want to delete ${previewEmployee.Name}?`)) return;
 
     try {
-      await axios.delete(`http://127.0.0.1:8000/employees/${previewEmployee.EmployeeID}`);
+      await axios.delete(`https://employee-backend-k5pq.onrender.com/employees/${previewEmployee.EmployeeID}`);
       setEmployees(employees.filter((e) => e.EmployeeID !== previewEmployee.EmployeeID));
       setDeletedEmployees([...deletedEmployees, previewEmployee]);
       setSelectedEmployees(selectedEmployees.filter((e) => e.EmployeeID !== previewEmployee.EmployeeID));
@@ -64,7 +64,7 @@ const DeleteRecord = () => {
     if (!window.confirm("Are you sure you want to delete ALL employees?")) return;
   
     try {
-      await axios.delete("http://127.0.0.1:8000/employees");
+      await axios.delete("https://employee-backend-k5pq.onrender.com/employees");
       setDeletedEmployees([...deletedEmployees, ...employees]);
       setEmployees([]);
       alert("All employees deleted successfully!");
@@ -207,7 +207,7 @@ const DeleteRecord = () => {
                   onClick={async () => {
                     try {
                       await axios.put(
-                        `http://127.0.0.1:8000/employees/restore/${emp.EmployeeID}`
+                        `https://employee-backend-k5pq.onrender.com/employees/restore/${emp.EmployeeID}`
                       );
                       // Remove restored employee from deleted list
                       setDeletedEmployees(

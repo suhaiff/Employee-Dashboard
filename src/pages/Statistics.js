@@ -14,7 +14,7 @@ const Statistics = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/employees")
+      .get("https://employee-backend-k5pq.onrender.com/employees")
       .then((res) => setEmployees(res.data))
       .catch((err) => console.error("Error fetching employees:", err));
   }, []);

@@ -41,7 +41,7 @@ function AddRecord() {
     };
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/employees");
+      const res = await fetch("https://employee-backend-k5pq.onrender.com/employees");
       const existing = await res.json();
 
       const duplicateById = existing.some(
@@ -59,7 +59,7 @@ function AddRecord() {
         return;
       }
 
-      const addRes = await fetch("http://127.0.0.1:8000/employees", {
+      const addRes = await fetch("https://employee-backend-k5pq.onrender.com/employees", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newEmp),
@@ -109,7 +109,7 @@ function AddRecord() {
     formData.append("file", file);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/import", {
+      const res = await fetch("https://employee-backend-k5pq.onrender.com/employees", {
         method: "POST",
         body: formData,
       });
